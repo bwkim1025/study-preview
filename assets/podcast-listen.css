@@ -1,0 +1,25 @@
+/* 오늘 회차 듣기 칸: '전체' + 분야·과목 칩(누르면 바로 재생). 기존 색·글꼴을 그대로 씀 */
+.podcast-listen{margin:16px 0 20px;padding:18px 20px;background:var(--panel, #fff);border:1px solid var(--line, #e6eded);border-radius:18px}
+.podcast-listen h2{margin:0;font-size:16px;font-weight:800;letter-spacing:-.3px}
+.podcast-listen-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.podcast-listen audio{width:100%;margin:0 0 14px}
+/* 분야·과목 칩과 재생 속도 */
+.pl-hint{margin:0 0 8px;font-size:12px;color:var(--ink-3, #5b6b75)}
+.pl-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.pl-chip{appearance:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border-radius:999px;border:1px solid var(--line, #d9e2e8);background:transparent;color:inherit;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.pl-chip small{font-size:11px;font-weight:600;opacity:.65}
+.pl-chip[aria-pressed=true]{background:var(--v3-deep, #132b41);border-color:var(--v3-deep, #132b41);color:#fff}
+.pl-chip.is-playing{box-shadow:0 0 0 2px var(--v3-soft, #b9d3ea)}
+.pl-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.pl-speed{display:inline-flex;border:1px solid var(--line, #d9e2e8);border-radius:999px;overflow:hidden}
+.pl-speed button{appearance:none;border:0;background:transparent;color:inherit;font:inherit;font-size:12px;font-weight:700;padding:6px 10px;min-height:36px;min-width:52px;cursor:pointer}
+.pl-speed button+button{border-left:1px solid var(--line, #d9e2e8)}
+.pl-speed button[aria-pressed=true]{background:var(--v3-soft, #edf3f8);color:var(--v3-deep, #315779)}
+.pl-now{margin:0 0 8px;font-size:12px;font-weight:700;color:var(--v3-deep, #315779)}
+body[data-page] .pl-chip[aria-pressed=true]{background:var(--navy, #132b41);border-color:var(--navy, #132b41)}
+html.dark .pl-chip,html.dark .pl-speed{border-color:rgba(255,255,255,.25)}
+@media(max-width:700px){.pl-actions{justify-content:flex-start}.pl-speed button{min-width:48px;padding:6px 8px}}
+@media(max-width:700px){
+  .podcast-listen{padding:16px;border-radius:16px}
+}
+body[data-page] .podcast-listen{border:1px solid var(--table-edge, var(--line));border-radius:12px;background:var(--surface, #fffefa)}
